@@ -17,6 +17,7 @@ root?.appendChild(form)
 const download = document.createElement("button")
     download.innerHTML= "download"
     root?.appendChild(download)
+    download.setAttribute("hidden","hidden")
 
 input.addEventListener('change', (e : Event)=>{
     const inputelement = e.target as HTMLInputElement
@@ -26,6 +27,7 @@ input.addEventListener('change', (e : Event)=>{
 })
 form.onsubmit = () =>{
     alert("plik oczekuje na pobranie")
+    download.removeAttribute("hidden")
     download.onclick = Download
 }
 const Download = async() => {
